@@ -1,0 +1,17 @@
+##
+## IMPORTANT
+## Exclude EVERYTHING that's not required by the production app.
+##
+
+.git
+.idea
+.vscode
+docker
+node_modules
+.gitignore
+.gitmodules
+docker-compose.yml
+Dockerfile
+README.md
+#tsconfig.json
+tslint.json

@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  mssql:
+    build: docker/mssql
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Password123
+    container_name: phone-book-mssql
+  node:
+    build:
+      context: ./
+      dockerfile: ./docker/node/Dockerfile
+    environment:
+      NODE_ENV: "development-docker"
+    container_name: phone-book-backend
+    volumes:
+      # mount project folder
+      - ./:/app
+      # do not mount node_modules folder
+      - /app/node_modules
+    ports:
+      - "5000:5000"
+      - "9229:9229"
+    depends_on:
+      - "mssql"  
+    #tty: true  
+    command: npm run start:dev

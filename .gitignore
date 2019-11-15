@@ -1,0 +1,9 @@
+.log
+/node_modules
+*/node_modules
+.idea
+dist
+
+# Visual Studio Code
+*.code-workspace
+

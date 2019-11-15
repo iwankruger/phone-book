@@ -1,0 +1,32 @@
+{
+  "test": {
+    "dialect": "sqlite",
+    "storage": "./database/db.development.sqlite",
+    "logging": false
+  },
+  "development-local": {
+    "username": "sa",
+    "password": "Password123",
+    "database": "master",
+    "host": "localhost",
+    "dialect": "mssql",
+    "port": 1433
+  },
+  "development-docker": {
+    "username": "sa",
+    "password": "Password123",
+    "database": "master",
+    "host": "172.17.0.1",
+    "dialect": "mssql",
+    "port": 1433
+  },
+  "production": {
+    "username": "sa",
+    "password": "Password123",
+    "database": "master",
+    "host": "172.17.0.1",
+    "dialect": "mssql",
+    "port": 1433,
+    "operatorsAliases": false
+  }
+}
